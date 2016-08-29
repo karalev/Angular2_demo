@@ -1,4 +1,4 @@
-System.register(['angular2/core', './lol.component'], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,28 @@ System.register(['angular2/core', './lol.component'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, lol_component_1;
-    var AppComponent;
+    var core_1;
+    var DetailComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (lol_component_1_1) {
-                lol_component_1 = lol_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
+            DetailComponent = (function () {
+                function DetailComponent() {
                 }
-                AppComponent = __decorate([
+                DetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: "\n        <h1>My First Angular 2 App</h1>\n        <lol></lol>\n    ",
-                        directives: [lol_component_1.LolComponent]
+                        selector: 'contacts-detail',
+                        template: "\n    <h2>{{contact.name}}</h2>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], DetailComponent);
+                return DetailComponent;
             }());
-            exports_1("AppComponent", AppComponent);
+            exports_1("DetailComponent", DetailComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=detail.component.js.map

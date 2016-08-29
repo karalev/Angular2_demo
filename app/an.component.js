@@ -53,7 +53,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 anComponent = __decorate([
                     core_1.Component({
                         selector: 'an',
-                        template: "\n        <h3>{{str}}</h3>\n        <ul>\n            <li *ngFor=\"#el of toChild.b; #idx = index\">\n                {{el}}\n            </li>\n        </ul>\n        <button (click)=\"sendTop()\">send vverh!</button>\n        <h2>{{toChild.a}}</h2>\n        <h3>{{str}}</h3>\n    ",
+                        template: "\n        <h3>{{str}}</h3>\n        <ul>\n            <li *ngFor=\"#el of toChild.b; #idx = index\">\n                <a href=\"#\">{{el}}</a>\n            </li>\n        </ul>\n        <button (click)=\"sendTop()\">send vverh!</button>\n        <h2>{{toChild.a}}</h2>\n        <h3>{{str}}</h3>\n    ",
                     }), 
                     __metadata('design:paramtypes', [])
                 ], anComponent);

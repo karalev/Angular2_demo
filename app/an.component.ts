@@ -6,7 +6,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core'
         <h3>{{str}}</h3>
         <ul>
             <li *ngFor="#el of toChild.b; #idx = index">
-                {{el}}
+                <a href="#">{{el}}</a>
             </li>
         </ul>
         <button (click)="sendTop()">send vverh!</button>

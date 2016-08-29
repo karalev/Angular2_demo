@@ -1,7 +1,7 @@
 
 
 export class LolService {
-    mas = ['olo', 'aza', 'wawa', 'pish'];
+    mas = ['Boris the Blade', 'Doug the Head', 'Tommy'];
 
     getLol() {
         console.log(this.mas);

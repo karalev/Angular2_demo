@@ -7,7 +7,7 @@ System.register([], function(exports_1, context_1) {
         execute: function() {
             LolService = (function () {
                 function LolService() {
-                    this.mas = ['olo', 'aza', 'wawa', 'pish'];
+                    this.mas = ['Boris the Blade', 'Doug the Head', 'Tommy'];
                 }
                 LolService.prototype.getLol = function () {
                     console.log(this.mas);
