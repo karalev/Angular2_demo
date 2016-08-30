@@ -5,21 +5,20 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            LolService = (function () {
-                function LolService() {
+            class LolService {
+                constructor() {
                     this.mas = ['Boris the Blade', 'Doug the Head', 'Tommy'];
                 }
-                LolService.prototype.getLol = function () {
+                getLol() {
                     console.log(this.mas);
                     return this.mas;
-                };
-                LolService.prototype.addLol = function (str) {
+                }
+                addLol(str) {
                     this.mas.push(str);
                     console.log(str);
                     console.log(this.mas);
-                };
-                return LolService;
-            }());
+                }
+            }
             exports_1("LolService", LolService);
         }
     }

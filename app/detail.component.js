@@ -18,18 +18,19 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            DetailComponent = (function () {
-                function DetailComponent() {
+            let DetailComponent = class DetailComponent {
+                constructor() {
                 }
-                DetailComponent = __decorate([
-                    core_1.Component({
-                        selector: 'contacts-detail',
-                        template: "\n    <h2>{{contact.name}}</h2>\n  "
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], DetailComponent);
-                return DetailComponent;
-            }());
+            };
+            DetailComponent = __decorate([
+                core_1.Component({
+                    selector: 'contacts-detail',
+                    template: `
+    <h2>{{contact.name}}</h2>
+  `
+                }), 
+                __metadata('design:paramtypes', [])
+            ], DetailComponent);
             exports_1("DetailComponent", DetailComponent);
         }
     }

@@ -21,19 +21,19 @@ System.register(['angular2/core', './lol.component'], function(exports_1, contex
                 lol_component_1 = lol_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                }
-                AppComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-app',
-                        template: "\n        <h1>My First Angular 2 App</h1>\n        <lol></lol>\n    ",
-                        directives: [lol_component_1.LolComponent]
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
-            }());
+            let AppComponent = class AppComponent {
+            };
+            AppComponent = __decorate([
+                core_1.Component({
+                    selector: 'my-app',
+                    template: `
+        <h1>My First Angular 2 App</h1>
+        <lol></lol>
+    `,
+                    directives: [lol_component_1.LolComponent]
+                }), 
+                __metadata('design:paramtypes', [])
+            ], AppComponent);
             exports_1("AppComponent", AppComponent);
         }
     }

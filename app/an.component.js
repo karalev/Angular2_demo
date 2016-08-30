@@ -18,12 +18,12 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            anComponent = (function () {
-                function anComponent() {
+            let anComponent = class anComponent {
+                constructor() {
                     this.counterChange = new core_1.EventEmitter();
                     this.str = 'Child Part';
                 }
-                anComponent.prototype.sendTop = function () {
+                sendTop() {
                     this.toChild.a++;
                     this.counterChange.emit({
                         value: {
@@ -31,34 +31,39 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                             b: this.toChild.b
                         }
                     });
-                };
-                Object.defineProperty(anComponent.prototype, "zzz", {
-                    get: function () {
-                        return this._zzz;
-                    },
-                    set: function (zzz) {
-                        this._zzz = this.toChild.b;
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                __decorate([
-                    core_1.Output('change'), 
-                    __metadata('design:type', Object)
-                ], anComponent.prototype, "counterChange", void 0);
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', Object)
-                ], anComponent.prototype, "toChild", void 0);
-                anComponent = __decorate([
-                    core_1.Component({
-                        selector: 'an',
-                        template: "\n        <h3>{{str}}</h3>\n        <ul>\n            <li *ngFor=\"#el of toChild.b; #idx = index\">\n                <a href=\"#\">{{el}}</a>\n            </li>\n        </ul>\n        <button (click)=\"sendTop()\">send vverh!</button>\n        <h2>{{toChild.a}}</h2>\n        <h3>{{str}}</h3>\n    ",
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], anComponent);
-                return anComponent;
-            }());
+                }
+                set zzz(zzz) {
+                    this._zzz = this.toChild.b;
+                }
+                get zzz() {
+                    return this._zzz;
+                }
+            };
+            __decorate([
+                core_1.Output('change'), 
+                __metadata('design:type', Object)
+            ], anComponent.prototype, "counterChange", void 0);
+            __decorate([
+                core_1.Input(), 
+                __metadata('design:type', Object)
+            ], anComponent.prototype, "toChild", void 0);
+            anComponent = __decorate([
+                core_1.Component({
+                    selector: 'an',
+                    template: `
+        <h3>{{str}}</h3>
+        <ul>
+            <li *ngFor="#el of toChild.b; #idx = index">
+                <a href="#">{{el}}</a>
+            </li>
+        </ul>
+        <button (click)="sendTop()">send vverh!</button>
+        <h2>{{toChild.a}}</h2>
+        <h3>{{str}}</h3>
+    `,
+                }), 
+                __metadata('design:paramtypes', [])
+            ], anComponent);
             exports_1("anComponent", anComponent);
         }
     }

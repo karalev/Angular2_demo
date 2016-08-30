@@ -24,8 +24,8 @@ System.register(['angular2/core', './lol.service', './an.component'], function(e
                 an_component_1 = an_component_1_1;
             }],
         execute: function() {
-            LolComponent = (function () {
-                function LolComponent(lolService) {
+            let LolComponent = class LolComponent {
+                constructor(lolService) {
                     this.objectToSend = {
                         a: 0,
                         b: []
@@ -35,35 +35,39 @@ System.register(['angular2/core', './lol.service', './an.component'], function(e
                     this.objectToSend.a = 1;
                     this.objectToSend.b = this.lolService.getLol();
                 }
-                LolComponent.prototype.myValueChange = function (olo) {
+                myValueChange(olo) {
                     console.log(olo);
                     this.objectToSend = olo.value;
-                };
-                Object.defineProperty(LolComponent.prototype, "sss", {
-                    get: function () {
-                        console.log('get sss ' + this.objectToSend.a);
-                        return this.objectToSend.a;
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                LolComponent.prototype.addToArray = function (myInput) {
+                }
+                get sss() {
+                    console.log('get sss ' + this.objectToSend.a);
+                    return this.objectToSend.a;
+                }
+                addToArray(myInput) {
                     this.lolService.addLol(myInput);
-                };
-                LolComponent.prototype.showHide = function () {
+                }
+                showHide() {
                     this.des = !this.des;
-                };
-                LolComponent = __decorate([
-                    core_1.Component({
-                        selector: 'lol',
-                        template: "\n        <p>parent starts here!</p>\n        <button (click)=\"showHide()\">SHOW-HIDE</button>\n            \n            <an *ngIf=\"des\" [toChild]='objectToSend' (change)=\"myValueChange($event);\"></an>\n            <h1> {{sss}} </h1>\n            \n        <input type=\"text\" #inp>\n        <button (click)=\"addToArray(inp.value)\">SEND to Array</button>\n    ",
-                        providers: [lol_service_1.LolService],
-                        directives: [an_component_1.anComponent]
-                    }), 
-                    __metadata('design:paramtypes', [lol_service_1.LolService])
-                ], LolComponent);
-                return LolComponent;
-            }());
+                }
+            };
+            LolComponent = __decorate([
+                core_1.Component({
+                    selector: 'lol',
+                    template: `
+        <p>parent starts here!</p>
+        <button (click)="showHide()">SHOW-HIDE</button>
+            
+            <an *ngIf="des" [toChild]='objectToSend' (change)="myValueChange($event);"></an>
+            <h1> {{sss}} </h1>
+            
+        <input type="text" #inp>
+        <button (click)="addToArray(inp.value)">SEND to Array</button>
+    `,
+                    providers: [lol_service_1.LolService],
+                    directives: [an_component_1.anComponent]
+                }), 
+                __metadata('design:paramtypes', [lol_service_1.LolService])
+            ], LolComponent);
             exports_1("LolComponent", LolComponent);
         }
     }
